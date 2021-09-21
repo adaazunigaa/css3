@@ -1,0 +1,186 @@
+#box{
+    background: red;
+    height: 200px;
+    width: 200px;
+    margin: 40px auto;
+    padding: 50px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border-top-left-radius: 100px;
+}
+
+
+/*Colors*/
+body#colors{
+    background: rgba(25, 52, 84, 1);
+    color: white;
+}
+
+#colors #container{
+    width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, .1);
+}
+
+#colors #box{
+   /* background: linear-gradient(to right, rgba(250, 250, 250, .8),red); */
+   background: radial-gradient(white, black, red, green);
+   background: gradient;
+}
+
+
+
+/*Shadows*/
+#shadows #container{
+    width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(255, 204, 51, 0.8);
+
+    /*The 4th value is the spread(how far the shadow will go)*/
+    box-shadow: 4px 10px 20px 25px red;
+    
+}
+
+#shadows h1{
+    color: white;
+    text-shadow: -6px 10px rgba(0, 128, 0, 0.596);
+}
+
+#shadows h2{
+    text-shadow: 0 10px 15px black; 
+}
+
+#shadows h3{
+    text-shadow: 0px 4px white, 6px 9px green;
+}
+
+
+
+
+
+/*COLUMNS*/
+#three-columns{
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+
+
+    -webkit-column-gap: 50px;
+    -moz-column-gap: 50px;
+    column-gap: 50px;
+
+    -webkit-column-rule-style: solid;
+    -moz-column-rule-style: solid;
+    column-rule-style: dashed;
+
+    -webkit-column-rule-width: 5px;
+    -moz-column-rule-width: 5px;
+    column-rule-width: 5px;
+
+    -webkit-column-rule-color: salmon;
+    -moz-column-rule-color: salmon;
+    column-rule-color: salmon;
+}
+
+/*Animations and transitions*/
+
+@keyframes box{
+    from{border-radius: 20px;
+         background-color: yellow; 
+         top: 0; 
+         left: 0;}
+
+    to{border-top-left-radius: 400px; 
+        background-color: purple; 
+        top: 100px; 
+        left: 100px;}
+}
+
+#animations #box{
+    position: relative;
+    animation-name: box;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+
+    /* This is a short cut for all the statements above
+    animation: box 10s linear 2s 3 alternate;
+    */
+}
+
+#box2{
+    background: blue;
+    width: 200px;
+    height: 200px;
+    color: orange;
+    position: relative;
+
+}
+
+#box2:hover{
+    background: red;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    color: white;
+    /*
+    transition: all 3s;
+    transition-timing-function: ease-in;
+    */
+    transition: width 8s, height 2s, background 20s ;
+}
+
+
+
+
+/*Buttons*/
+@keyframes buttonAnimation{
+    from {padding: 10px 20px;
+            font: inherit;}
+    to{padding:15px 30px;
+        font-size: 30px;}
+}
+
+
+.button{
+   display: inline-block; 
+   background: #fc3;
+   background: linear-gradient(#fc3, #f91);
+   border: solid 1px #999;
+   border-radius: 5px;
+   color: white;
+   padding: 10px 20px;
+   margin: 10px;
+   text-decoration: none;
+   text-shadow: 0 1px 2px rgba(0,0,0,.8);
+}
+
+.button:hover{
+    border-color: #888;
+    text-shadow: 0 1px 2px rgba(0,0,0,.8);
+    background: #f91;
+    background: linear-gradient(to top ,#fc3, #fc3, #f91);
+    animation-name: buttonAnimation;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+
+}
+
+.button:active{
+    position: ralative;
+    top: 1px;
+}
+
+.alt-button{
+    background: radial-gradient(#fc3,#f91);
+}
+
+.alt-button{
+    background: radial-gradient(#f91, #fc3);
+}
